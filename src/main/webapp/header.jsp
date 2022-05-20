@@ -29,11 +29,16 @@
 	</head>
 	<body>
 
-		<!-- Main Wrapper -->
-		<div class="main-wrapper">
+	
 		
 			<!-- Header -->
+	
 			<header class="header">
+			
+		
+			
+			
+			
 				<nav class="navbar navbar-expand-lg header-nav">
 					<div class="navbar-header">
 						<a id="mobile_btn" href="javascript:void(0);">
@@ -132,18 +137,24 @@
 								<p class="contact-info-header"> +91-9098116177</p>
 							</div>
 						</li>
-						<%if(request.getAttribute("mobileNumber")==null) {%>
+						<%if(session.getAttribute("mobileNumber")==null) {%>
 						<li class="nav-item">
 								<a class="nav-link header-login" href="login.jsp">login / Signup </a>
 								
 						</li>
 						<%}else{ %>
 						<li class="nav-item">
-								<a  class="nav-link header-login" href="login.jsp">Logout</a>
+								<form action="login.jsp">
+								<input type="hidden" name="action" value="logout">
+								<button class="btn btn-primary"> Logout</button>
+								</form>
 						</li>
 						<%}%>
 					</ul>
 				</nav>
+				
+			
+				
 			</header>
 			<!-- /Header -->
 			

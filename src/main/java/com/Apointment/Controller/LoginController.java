@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.Apointment.Model.*;
 
 /**
@@ -44,7 +46,11 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		
+		 HttpSession session = request.getSession();
+	     session.setAttribute("MyAttribute", "test value");
+	        
+	        
 		String mobileNumber = request.getParameter("mobileNumber");
 		String password = request.getParameter("password");
 
@@ -72,12 +78,18 @@ public class LoginController extends HttpServlet {
 
 					if (udi.identifyUser(mobileNumber)) {
 
-						request.setAttribute("mobileNumber",mobileNumber );
+						session.setAttribute("mobileNumber",mobileNumber );
+						
+						session.setAttribute("type","doctor");
+						
 						RequestDispatcher rd = request.getRequestDispatcher("doctor-dashboard.jsp");
 						rd.forward(request, response);
 					} else {
 
-						request.setAttribute("mobileNumber",mobileNumber );
+						session.setAttribute("mobileNumber",mobileNumber );
+						
+						session.setAttribute("type","patient");
+						
 						RequestDispatcher rd = request.getRequestDispatcher("patient-dashboard.jsp");
 						rd.forward(request, response);
 

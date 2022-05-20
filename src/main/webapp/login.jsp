@@ -58,13 +58,39 @@
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
-		
+			
+		    
+		    
 			<!-- Header -->
 			<jsp:include page="header.jsp"/>
-						<!-- /Header -->
+		    <!-- /Header -->
+		     <!-- This code is for remove session-->
+			<%if(request.getParameter("action") !=null ){%>
+        		    
+        		    
+        		    <%session.removeAttribute("type");%>
+        		    <%session.removeAttribute("mobileNumber");%>
+        		    <%response.sendRedirect("login.jsp");%>
+        
+			<%}%>
+			 <!-- this is for redirecting to the  page  -->	    
+		    <%if(session.getAttribute("type") == "doctor"){ %>
 			
+			<%  response.sendRedirect("doctor-dashboard.jsp");%>
+			
+			<%}else if(session.getAttribute("type") == "patient") {%>
+			 
+			 <% response.sendRedirect("patient-dashboard.jsp");%>
+			
+			<%}%>
+			
+		    
+		    
+		    
+		    <!-- this is for logout setting, when user logout if they click on logout -->
 			<!-- Page Content -->
 			<div class="content">
+			
 				<div class="container-fluid">
 					
 					<div class="row">
