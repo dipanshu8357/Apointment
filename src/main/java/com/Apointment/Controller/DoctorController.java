@@ -68,7 +68,7 @@ public class DoctorController extends HttpServlet {
 		    ud.setType(1);
 		
 		    udi.addUserData(ud);
-		    
+		    request.setAttribute("signup", "SignUp Successfully!!!!");
 		    request.setAttribute("mobile", mobileNumber);
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
