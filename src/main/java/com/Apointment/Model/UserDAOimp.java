@@ -45,6 +45,7 @@ public class UserDAOimp implements UserDAO{
 			e.printStackTrace();
 
 		}
+		System.out.print("dao");
 		
 	}
 	

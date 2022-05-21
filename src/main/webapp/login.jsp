@@ -109,7 +109,12 @@
 											
 											<%= request.getAttribute("loginError") %>
 											
-											<%}%>
+											<%}else if(request.getAttribute("signup")!=null){ %>
+											<p style="color:green;">									
+											<%= request.getAttribute("signup") %>
+											</p>
+											<%} %>
+											
 											</p>
 											<!-- 
 											<div class="alert">

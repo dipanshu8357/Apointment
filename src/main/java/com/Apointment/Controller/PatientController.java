@@ -198,9 +198,10 @@ public class PatientController extends HttpServlet {
 			ud.setType(0);
 			
 			
+			
 //			System.out.println(name+"  "+"  "+mobileNumber+"  "+password);
 			udi.addUserData(ud);
-			
+			request.setAttribute("signup","SignUp SuccessFully!!!!");		
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 		
