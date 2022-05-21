@@ -117,7 +117,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="admin/index.jsp" target="_blank">Admin</a>
+								<a href="admin/login.jsp" target="_blank">Admin</a>
 							</li>
 							<li class="login-link">
 							

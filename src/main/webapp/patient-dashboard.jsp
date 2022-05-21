@@ -43,7 +43,7 @@
 			
 			<%}else if(session.getAttribute("type") == "patient") {%>
 			 
-			<% response.sendRedirect("patient-dashboard.jsp");%>
+			
 			
 			<%}else {%>
 			
