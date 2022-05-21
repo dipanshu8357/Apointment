@@ -70,10 +70,11 @@
         		    
         		    <%session.removeAttribute("type");%>
         		    <%session.removeAttribute("mobileNumber");%>
-        		    <%response.sendRedirect("login.jsp");%>
+        		 	
         
 			<%}%>
-			 <!-- this is for redirecting to the  page  -->	    
+		<!------ this is for redirecting to the  page  -->	    
+		    
 		    <%if(session.getAttribute("type") == "doctor"){ %>
 			
 			<%  response.sendRedirect("doctor-dashboard.jsp");%>
@@ -83,10 +84,7 @@
 			 <% response.sendRedirect("patient-dashboard.jsp");%>
 			
 			<%}%>
-			
-		    
-		    
-		    
+		
 		    <!-- this is for logout setting, when user logout if they click on logout -->
 			<!-- Page Content -->
 			<div class="content">

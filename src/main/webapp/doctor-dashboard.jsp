@@ -35,6 +35,18 @@
 			<!-- Header -->
 			<jsp:include page="header.jsp"/>
 			<!-- /Header -->
+						
+			  <%if(session.getAttribute("type") == "doctor"){ %>
+			
+			
+			<%}else if(session.getAttribute("type") == "patient") {%>
+			 
+				<% response.sendRedirect("patient-dashboard.jsp");%>
+						
+			<%}else {%>
+				
+				<%response.sendRedirect("login.jsp");%>
+			<%} %>
 			
 			<!-- Breadcrumb -->
 			<div class="breadcrumb-bar">
