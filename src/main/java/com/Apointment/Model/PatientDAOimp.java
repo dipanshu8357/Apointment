@@ -1,5 +1,8 @@
 package com.Apointment.Model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.ResultSet;
 
 
@@ -14,8 +17,9 @@ public class PatientDAOimp {
 	
 	public PatientDAOimp()
 	{
+		System.out.println("vccvvx");
 		con=(Connection) DBConnection.openConnection();
-		
+		System.out.println(con);
 	}
 	 
 	
@@ -63,8 +67,8 @@ public class PatientDAOimp {
 
 	//method for inserting details of patient
 	public void patientProfileInsData(PatientSettingData psd) { 
-	  String DML="UPDATE patientProfileSetting SET firstName=?,lastName=?,bloodGroup=?,dateOfBirth=?,emailId=?,address=?,city=?,state=?,zipCode=?,country=? WHERE mobile=?"; 
-	  
+	  String DML="UPDATE patientProfileSetting SET firstName=?,lastName=?,bloodGroup=?,dateOfBirth=?,emailId=?,address=?,city=?,state=?,zipCode=?,country=? ,image=? WHERE mobile=?"; 
+	  FileInputStream fis=null;
 	  try {
 	  
 	  PreparedStatement ps=(PreparedStatement) con.prepareStatement(DML);
@@ -79,9 +83,14 @@ public class PatientDAOimp {
 	  ps.setString(8,psd.getState()); 
 	  ps.setString(9,psd.getZipCode());
 	  ps.setString(10,psd.getCountry());
-	  ps.setString(11,psd.getMobile());
 	  
+//	  System.out.println(psd.getImage()); 
 	  
+//	  File image=new File(psd.getPhoto());
+//	  fis=new FileInputStream(image);
+	  ps.setString(11 , psd.getImage());
+	  
+	  ps.setString(12,psd.getMobile());
 	  
 	  ps.executeUpdate();
 	  

@@ -14,8 +14,15 @@ public class PatientSettingData {
 	private String state;
 	private String zipCode;
 	private String country;
+	private String image;
 	
 	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String photo) {
+		this.image = image;
+	}
 	public String getFirstName() {
 		return firstName;
 	}

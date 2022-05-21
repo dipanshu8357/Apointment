@@ -11,7 +11,10 @@ public class UserDAOimp implements UserDAO{
 
 	static Connection con=null;
 	public UserDAOimp() {
+		
+		
 		con= DBConnection.openConnection();
+		System.out.println(con);
 	}
 	
 	

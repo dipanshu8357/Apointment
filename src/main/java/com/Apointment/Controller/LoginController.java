@@ -63,6 +63,7 @@ public class LoginController extends HttpServlet {
 			request.setAttribute("loginError", "Please Fill requred details !!!");
 
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			
 			rd.forward(request, response);
 			
 		} else {

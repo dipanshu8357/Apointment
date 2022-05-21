@@ -1,6 +1,7 @@
 package com.Apointment.Controller;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
@@ -9,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import com.Apointment.Entity.PatientSettingData;
 import com.Apointment.Entity.UserData;
@@ -91,6 +93,10 @@ public class PatientController extends HttpServlet {
 		String state = request.getParameter("state");
 		String zipCode = request.getParameter("zipCode");
 		String country = request.getParameter("country");
+		Part part= request.getPart("photo");
+		InputStream inputStream =part.getInputStream();
+		
+		String image=part.getSubmittedFileName();
 		
 		firstName=firstName.trim();
 		lastName=lastName.trim();
@@ -99,10 +105,7 @@ public class PatientController extends HttpServlet {
 		emailId=emailId.trim();
 		mobile = mobile.trim();
 		//mobile=(String) request.getAttribute("mobile");
-		
-		System.out.print(mobile);
-		
-		
+        //		System.out.print(mobile);
 		address =address.trim();
 		city =city.trim();
 		state = state.trim();
@@ -130,6 +133,7 @@ public class PatientController extends HttpServlet {
 		  psd.setState(state);
 		  psd.setZipCode(zipCode);
 		  psd.setCountry(country);
+		  
 			
 		  
 		   pdi.patientProfileInsData(psd); 
