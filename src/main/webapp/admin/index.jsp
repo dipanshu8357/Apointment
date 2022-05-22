@@ -11,18 +11,18 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="admin/assets/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+        <link rel="stylesheet" href="admin/assets/css/feathericon.min.css">
 		
-		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		<link rel="stylesheet" href="admin/assets/plugins/morris/morris.css">
 		
-		<!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+		<!-- Main CSS -->	
+        <link rel="stylesheet" href="admin/assets/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -30,16 +30,19 @@
 		<![endif]-->
     </head>
     <body>
-		<!-- Sidebar -->
+    
+    		
+			<!-- Sidebar -->
             <jsp:include page="adminSideBar.jsp"/>
 			<!-- /Sidebar -->
-		<!-- Main Wrapper -->
+			
+			
+			<!-- Main Wrapper -->
         <div class="main-wrapper">
 		
-					<!-- Header -->
+		<!-- Header -->
             <jsp:include page="adminHeader.jsp"/>
 			<!-- /Header -->
-			
 		
 						
 			<!-- Page Wrapper -->

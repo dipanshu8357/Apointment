@@ -8,16 +8,16 @@
         <title>Doccure - Login</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
 
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -32,20 +32,33 @@
             	<div class="container">
                 	<div class="loginbox">
                     	<div class="login-left">
-							<img class="img-fluid" src="assets/img/logo-white.png" alt="Logo">
+							<img class="img-fluid" src="./assets/img/logo-white.png" alt="Logo">
                         </div>
                         <div class="login-right">
 							<div class="login-right-wrap">
 								<h1>Login</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
+								 <p style="color:red;">
+											<%if(request.getAttribute("loginError")!=null){ %>
+											
+											<%= request.getAttribute("loginError") %>
+											
+											<%}else if(request.getAttribute("signup")!=null){%>
+											
+											 <p style="color:green;">
+											<%=request.getAttribute("signup") %>
+											 </p>
+											
+											<%} %>
+								</p>
+								<p class="account-subtitle"> Access to our dashboard</p>
 								
 								<!-- Form -->
-								<form action="https://dreamguys.co.in/demo/doccure/admin/index.jsp">
+								<form action="${pageContext.request.contextPath}/LoginController?action=adminLogin" id="submit" method ="post">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Email">
+										<input class="form-control" name="mobileNumber" type="text" placeholder="Mobile Number">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Password">
+										<input class="form-control" name="password" type="text" placeholder="Password">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-block" type="submit">Login</button>

@@ -109,7 +109,13 @@
 											
 											<%= request.getAttribute("loginError") %>
 											
-											<%}%>
+											<%}else if(request.getAttribute("signup")!=null){%>
+											
+											 <p style="color:green;">
+											<%=request.getAttribute("signup") %>
+											 </p>
+											
+											<%} %>
 											</p>
 											<!-- 
 											<div class="alert">
@@ -119,7 +125,7 @@
 											 -->
 											
 										</div>
-										<form action="${pageContext.request.contextPath}/LoginController" id="submit" method ="post">
+										<form action="${pageContext.request.contextPath}/LoginController?action=userLogin" id="submit" method ="post">
 											<div class="form-group form-focus">
 												<input type="text" class="form-control floating" id="mobileNumber" name="mobileNumber"  >
 												<label	 class="focus-label">Mobile Number</label>

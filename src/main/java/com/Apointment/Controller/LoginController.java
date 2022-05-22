@@ -22,9 +22,10 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#HttpServlet()
 	 */
 	UserDAOimp udi = null;
-
+	AdminDAOimp adi =null;
 	public LoginController() {
 		udi = new UserDAOimp();
+		adi = new AdminDAOimp();
 
 		// TODO Auto-generated constructor stub
 	}
@@ -43,12 +44,12 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		 HttpSession session = request.getSession();
-	     session.setAttribute("MyAttribute", "test value");
+		HttpSession session = request.getSession();
+	     
+		String action=request.getParameter("action");
 	        
 	        
 		String mobileNumber = request.getParameter("mobileNumber");
@@ -67,49 +68,99 @@ public class LoginController extends HttpServlet {
 			//here we set a messseg  for showing on jsp page
 			
 			request.setAttribute("loginError", "Please Fill requred details !!!");
-
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-			rd.forward(request, response);
+			if(action.equals("userLogin")) {
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}else if(action.equals("adminLogin")) {
+				RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
+				rd.forward(request, response);
+			}
+			
 			
 		} else {
 
-			if (udi.verifyPassword(password)) {
-				if (udi.verifyUser(mobileNumber, password)) {
-
-					if (udi.identifyUser(mobileNumber)) {
-
-						session.setAttribute("mobileNumber",mobileNumber );
-						
-						session.setAttribute("type","doctor");
-						
-						RequestDispatcher rd = request.getRequestDispatcher("doctor-dashboard.jsp");
-						rd.forward(request, response);
-					} else {
-
-						session.setAttribute("mobileNumber",mobileNumber );
-						
-						session.setAttribute("type","patient");
-						
-						RequestDispatcher rd = request.getRequestDispatcher("patient-dashboard.jsp");
-						rd.forward(request, response);
-
-					}
-				} else {
-					System.out.println("User Not Registred!!");
-					request.setAttribute("loginError","User Not Registred!!" );
-					RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-					rd.forward(request, response);
-				}
-			} else {
-				request.setAttribute("loginError", "Invalid Password !!!");
-
-				System.out.println("Invalid Password !!!");
-				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-				rd.forward(request, response);
+			if(action.equals("userLogin")) {
+					userLogin(request,response,mobileNumber,password,session);
+			}else if(action.equals("adminLogin")) {
+					adminLogin(request,response,mobileNumber,password,session);
 			}
 
 		}
 		
 	}
+	protected void userLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password,HttpSession session) throws ServletException, IOException {
+		
+		if (udi.verifyPassword(password)) {
+			
+			if (udi.verifyUser(mobileNumber, password)) {
+
+				if (udi.identifyUser(mobileNumber)) {
+
+					session.setAttribute("mobileNumber",mobileNumber );				
+					session.setAttribute("type","doctor");
+					
+					RequestDispatcher rd = request.getRequestDispatcher("doctor-dashboard.jsp");
+					rd.forward(request, response);
+				} else {
+
+					session.setAttribute("mobileNumber",mobileNumber );
+					session.setAttribute("type","patient");
+					
+					RequestDispatcher rd = request.getRequestDispatcher("patient-dashboard.jsp");
+					rd.forward(request, response);
+
+				}
+			} else {
+				System.out.println("User Not Registred!!");
+				request.setAttribute("loginError","User Not Registred!!" );
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}
+		} else {
+			request.setAttribute("loginError", "Invalid Password !!!");
+
+			System.out.println("Invalid Password !!!");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+		}
+		
+		
+	}
+	
+protected void adminLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password,HttpSession session) throws ServletException, IOException {
+	
+	System.out.println("adminLogin");
+			if (adi.verifyPassword(password)) {
+			
+			if (adi.verifyUser(mobileNumber, password)) {
+
+				
+					session.setAttribute("mobileNumber",mobileNumber );
+					
+					session.setAttribute("type","admin");
+					System.out.println("adminLoginsuccesfully");
+					
+					RequestDispatcher rd = request.getRequestDispatcher("admin/index.jsp");
+					rd.forward(request, response);
+				
+				
+			} else {
+				System.out.println("Admin Not Registred!!");
+				request.setAttribute("loginError","Admin Not Registred!!" );
+				RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
+				rd.forward(request, response);
+			}
+		} else {
+			request.setAttribute("loginError", "Invalid Password !!!");
+
+			System.out.println("Invalid Password !!!");
+			RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
+			rd.forward(request, response);
+		}
+
+		
+	}
+	
+	
 
 }

@@ -42,9 +42,7 @@
 			<%  response.sendRedirect("doctor-dashboard.jsp");%>
 			
 			<%}else if(session.getAttribute("type") == "patient") {%>
-			 
-			
-			
+		
 			<%}else {%>
 			
 				<%response.sendRedirect("login.jsp");%>

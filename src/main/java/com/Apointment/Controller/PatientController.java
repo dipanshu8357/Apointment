@@ -200,7 +200,7 @@ public class PatientController extends HttpServlet {
 			
 //			System.out.println(name+"  "+"  "+mobileNumber+"  "+password);
 			udi.addUserData(ud);
-			
+			request.setAttribute("signup", "SignUp succesfully !!!!");
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 		
@@ -209,6 +209,7 @@ public class PatientController extends HttpServlet {
 			request.setAttribute("loginError", "Please Enter Valid mobile number !!!!!!");
 			RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
 			rd.forward(request, response);
+			
 		}
 		
 	}catch(Exception e) {

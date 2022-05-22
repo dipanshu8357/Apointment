@@ -110,8 +110,7 @@ public class UserDAOimp implements UserDAO{
 		String dql = "select * from userdata where  password=?";
 		try {
 			
-			PreparedStatement ps = con.prepareStatement(dql);
-			
+			PreparedStatement ps = con.prepareStatement(dql);		
 			ps.setString(1, password);
 			
 			ResultSet rs = ps.executeQuery();
