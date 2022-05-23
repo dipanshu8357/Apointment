@@ -94,6 +94,7 @@ public class PatientController extends HttpServlet {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String dateOfBirth = request.getParameter("dateOfBirth");
+		Integer age = Integer.parseInt(request.getParameter("Age"));
 		String bloodGroup = request.getParameter("bloodGroup");
 		String emailId = request.getParameter("emailId");
 		String mobile = request.getParameter("mobile");
@@ -145,6 +146,7 @@ public class PatientController extends HttpServlet {
 		  psd.setFirstName(firstName); 
 		  psd.setLastName(lastName);
 		  psd.setDateOfBirth(dateOfBirth);
+		  psd.setAge(age);
 		  psd.setBloodGroup(bloodGroup);
 		  psd.setEmailId(emailId);
 		  psd.setMobile(mobile);

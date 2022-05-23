@@ -11,16 +11,16 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+        <link rel="stylesheet" href="./assets/css/feathericon.min.css">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -45,25 +45,25 @@
 								<a href="index.jsp"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li> 
-								<a href="appointment-list.jsp"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+								<a href="${pageContext.request.contextPath}/admin/appointment-list.jsp"><i class="fe fe-layout"></i> <span>Appointments</span></a>
 							</li>
 							<li> 
-								<a href="specialities.jsp"><i class="fe fe-users"></i> <span>Specialities</span></a>
+								<a href="${pageContext.request.contextPath}/admin/specialities.jsp"><i class="fe fe-users"></i> <span>Specialities</span></a>
 							</li>
 							<li> 
-								<a href="doctor-list.jsp"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+								<a href="${pageContext.request.contextPath}/admin/doctor-list.jsp"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
 							<li> 
-								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
+								<a href="${pageContext.request.contextPath}/admin/patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
 							<li> 
-								<a href="reviews.jsp"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
+								<a href="${pageContext.request.contextPath}/admin/reviews.jsp"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
 							</li>
 							<li> 
-								<a href="transactions-list.jsp"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+								<a href="${pageContext.request.contextPath}/admin/transactions-list.jsp"><i class="fe fe-activity"></i> <span>Transactions</span></a>
 							</li>
 							<li> 
-								<a href="settings.jsp"><i class="fe fe-vector"></i> <span>Settings</span></a>
+								<a href="${pageContext.request.contextPath}/admin/settings.jsp"><i class="fe fe-vector"></i> <span>Settings</span></a>
 							</li>
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>

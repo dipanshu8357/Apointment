@@ -47,8 +47,7 @@
 			
 			<%}else if(session.getAttribute("type") == "patient") {%>
 			 
-			 <% response.sendRedirect("patient-dashboard.jsp");%>
-			
+			 
 			<%}else{%>
 			<% response.sendRedirect("login.jsp");%>
 			<%} %>
@@ -85,13 +84,12 @@
 										<!-- patient profile photo  -->
 										</a>
 										<div class="profile-det-info">
-											<h3>Richard Wilson</h3>
+											<h3>${patient.getFirstName()}${patient.getLastName()}</h3>
 											<div class="patient-details">
-												<h5><i class="fas fa-birthday-cake"></i> 24 Jul 1983, 38 years</h5>
+												<h5><i class="fas fa-birthday-cake"></i>${patient.getDateOfBirth()}, 38 years</h5>
 												<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i>
-												
-												
-												 Newyork, USA</h5>
+												${patient.getCity()},  ${patient.getState()},  ${patient.getCountry()}
+												</h5>
 											</div>
 										</div>
 									</div>
@@ -210,6 +208,16 @@
 													</div>
 												</div>
 											</div>
+											<div class="col-12 col-md-6">
+												<div class="form-group">
+													<label>Age</label>
+													<div class="cal-icon">
+														<input type="text"  name="Age" value="${patient.getAge()}" required>
+													</div>
+												</div>
+											</div>
+											
+											
 											<div class="col-12 col-md-6">
 												<div class="form-group">
 													<label>Blood Group</label>

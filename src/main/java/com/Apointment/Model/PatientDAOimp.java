@@ -41,6 +41,7 @@ public class PatientDAOimp {
 				psd.setFirstName(rs.getString("firstName"));
 				psd.setLastName(rs.getString("lastName"));
 				psd.setBloodGroup(rs.getString("bloodGroup"));
+				psd.setAge(rs.getInt("Age"));
 				psd.setDateOfBirth(rs.getString("dateOfBirth"));
 				psd.setEmailId(rs.getString("emailId"));
 				psd.setMobile(rs.getString("mobile"));
@@ -94,7 +95,7 @@ public class PatientDAOimp {
 	//method for inserting details of patient
 //	@SuppressWarnings("resource")
 	public void patientProfileInsData(PatientSettingData psd) { 
-	  String DML="UPDATE patientProfileSetting SET firstName=?,lastName=?,bloodGroup=?,dateOfBirth=?,emailId=?,address=?,city=?,state=?,zipCode=?,country=?,photo=? WHERE mobile=?"; 
+	  String DML="UPDATE patientProfileSetting SET firstName=?,lastName=?,bloodGroup=?,Age=?,dateOfBirth=?,emailId=?,address=?,city=?,state=?,zipCode=?,country=?,photo=? WHERE mobile=?"; 
 	  
 	  try {
 	  
@@ -106,17 +107,18 @@ public class PatientDAOimp {
 	  ps.setString(1,psd.getFirstName()); 
 	  ps.setString(2,psd.getLastName());
 	  ps.setString(3,psd.getBloodGroup());
-	  ps.setString(4,psd.getDateOfBirth());
-	  ps.setString(5,psd.getEmailId()); 
-	  ps.setString(6,psd.getAddress());
-	  ps.setString(7,psd.getCity());
-	  ps.setString(8,psd.getState()); 
-	  ps.setString(9,psd.getZipCode());
-	  ps.setString(10,psd.getCountry());
+	  ps.setInt(4,psd.getAge());
+	  ps.setString(5,psd.getDateOfBirth());
+	  ps.setString(6,psd.getEmailId()); 
+	  ps.setString(7,psd.getAddress());
+	  ps.setString(8,psd.getCity());
+	  ps.setString(9,psd.getState()); 
+	  ps.setString(10,psd.getZipCode());
+	  ps.setString(11,psd.getCountry());
 	  
-	  ps.setBlob(11, psd.getPhoto());
+	  ps.setBlob(12, psd.getPhoto());
 	  
-	  ps.setString(12,psd.getMobile());
+	  ps.setString(13,psd.getMobile());
 	  
 	  
 	  

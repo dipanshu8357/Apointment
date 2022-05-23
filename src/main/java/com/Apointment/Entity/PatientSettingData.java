@@ -10,6 +10,7 @@ public class PatientSettingData {
 	private String firstName;
 	private String lastName;
 	private String bloodGroup;
+	private Integer age;
 	private String dateOfBirth;
 	private String emailId;
 	private String mobile;
@@ -21,6 +22,12 @@ public class PatientSettingData {
 	private InputStream photo;
 	private String base64Image;
 	
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
