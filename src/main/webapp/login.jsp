@@ -64,26 +64,25 @@
 			<!-- Header -->
 			<jsp:include page="header.jsp"/>
 		    <!-- /Header -->
-		     <!-- This code is for remove session-->
-			<%if(request.getParameter("action") !=null ){%>
-        		    
-        		    
-        		    <%session.removeAttribute("type");%>
-        		    <%session.removeAttribute("mobileNumber");%>
-        		 	
-        
-			<%}%>
-		<!------ this is for redirecting to the  page  -->	    
-		    
-		    <%if(session.getAttribute("type") == "doctor"){ %>
+		     
+		     <!------redirecting to the  pages  -->	    
+	
+			<!-- manage session -->
+			 <%if(session.getAttribute("type") == "doctor"){ %>
 			
-			<%  response.sendRedirect("doctor-dashboard.jsp");%>
+			<% response.sendRedirect("doctor-dashboard.jsp");%>
 			
 			<%}else if(session.getAttribute("type") == "patient") {%>
 			 
 			 <% response.sendRedirect("patient-dashboard.jsp");%>
 			
+			<%}else if(session.getAttribute("type") == "admin") {%>
+			 
+			  <% response.sendRedirect("admin/index.jsp");%>
+			
 			<%}%>
+		<!--Manage session end -->
+    		
 		
 		    <!-- this is for logout setting, when user logout if they click on logout -->
 			<!-- Page Content -->

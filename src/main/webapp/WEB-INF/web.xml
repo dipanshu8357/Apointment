@@ -32,4 +32,14 @@
     <servlet-name>AdminController</servlet-name>
     <url-pattern>/AdminController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>xxx</display-name>
+    <servlet-name>xxx</servlet-name>
+    <servlet-class>com.Apointment.Controller.xxx</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>xxx</servlet-name>
+    <url-pattern>/xxx</url-pattern>
+  </servlet-mapping>
 </web-app>

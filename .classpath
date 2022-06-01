@@ -13,8 +13,20 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/apache-tomcat-9.0.56/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/jar_files (1)/mysql-connector-java-5.1.44.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/jar_files/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/apache-tomcat-9.0.56/lib/servlet-api.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/jar_files (1)/mysql-connector-java-5.1.44.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/jar_files/jstl-1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

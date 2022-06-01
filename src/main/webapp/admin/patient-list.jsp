@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -80,35 +83,41 @@
 												</tr>
 											</thead>
 											<tbody>
+											
+								 		 
+									<%-- 			
+										 <%ArrayList<AdminPatientData> patientList = request.getAttribute("patientList");%> 
+										 <%for(int k=0;k<patientList.length;k++){%>
+										 <% out.print(patientList[k]);%>
+										 <%} %>
+												 --%>
+												<%int i=1; %>
+												<c:forEach var="patients" items="${patientList}">
 												<tr>
-													<td>#PT001</td>
+												
+														<td>#PT00<%out.print(i++); %></td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
-															<a href="profile.jsp">Charlene Reed </a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2">
+															
+															<img src="data:image/jpeg;base64,${patients.getBase64Image()}" class="avatar-img rounded-circle" onerror="this.src='assets/img/patients/patient1.jpg'" alt="User Image">
+															 
+															</a>
+															<a href="admin/profile.jsp">${patients.getFirstName()}${patients.getLastName()}</a>
 														</h2>
 													</td>
-													<td>29</td>
-													<td>4417  Goosetown Drive, Taylorsville, North Carolina, 28681</td>
-													<td>8286329170</td>
-													<td>20 Oct 2019</td>
+													
+												    <td>${patients.getAge() }<!--calculate age function creating  --></td>
+													<td>${patients.getAddress() }</td>
+													<td>${patients.getMobile() }</td>
+													<td>20 Oct 2019<!--last visit(Last login of patient)  --></td>
 													<td class="text-right">$100.00</td>
+													
+   												    
 												</tr>
-												<tr>
-													<td>#PT002</td>
-													<td>
-														<h2 class="table-avatar">
-																<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
-															<a href="profile.jsp">Travis Trimble </a>
-														</h2>
-													</td>
-													<td>23</td>
-													<td>4026  Fantages Way, Brunswick, Maine, 04011</td>
-													<td>2077299974</td>
-													<td>22 Oct 2019</td>
-													<td class="text-right">$200.00</td>
-												</tr>
-																		
+												 </c:forEach>
+												
+																												
 											</tbody>
 										</table>
 									</div>

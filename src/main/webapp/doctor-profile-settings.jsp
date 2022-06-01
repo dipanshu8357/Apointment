@@ -36,6 +36,22 @@
 	
 	</head>
 	<body>
+	
+	<!--Manage session -->
+		  <%if(session.getAttribute("type") == "doctor"){ %>
+			
+			<!-- when Doctore is login then continue this page  -->
+			
+			<%}else if(session.getAttribute("type") == "patient") {%>
+			 
+			 <% response.sendRedirect("patient-dashboard.jsp");%>
+			
+			<%}else if(session.getAttribute("type") == "admin") {%>
+			 
+			 <% response.sendRedirect("admin/index.jsp");%>
+			
+			<%}%>
+		<!--Manage session end -->
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -77,13 +93,16 @@
 			<!-- /Breadcrumb -->
 			
 			<!-- Page Content -->
+			
 			<div class="content">
-				<div class="container-fluid">
+			
+			<form action="${pageContext.request.contextPath}/DoctorController">
+				<!-- <div class="container-fluid">
 
 					<div class="row">
 						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 						
-							<!-- Profile Sidebar -->
+							Profile Sidebar
 							<div class="profile-sidebar">
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
@@ -173,12 +192,12 @@
 									</nav>
 								</div>
 							</div>
-							<!-- /Profile Sidebar -->
+							/Profile Sidebar
 							
 						</div>
 						<div class="col-md-7 col-lg-8 col-xl-9">
 						
-							<!-- Basic Information -->
+							Basic Information
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Basic Information</h4>
@@ -203,7 +222,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>First Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
+												<input type="text" name="name" class="form-control">
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -240,9 +259,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Basic Information -->
+							/Basic Information
 							
-							<!-- About Me -->
+							About Me
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">About Me</h4>
@@ -252,9 +271,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /About Me -->
+							/About Me
 							
-							<!-- Clinic Info -->
+							Clinic Info
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Clinic Info</h4>
@@ -290,9 +309,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Clinic Info -->
+							/Clinic Info
 
-							<!-- Contact Details -->
+							Contact Details
 							<div class="card contact-card">
 								<div class="card-body">
 									<h4 class="card-title">Contact Details</h4>
@@ -337,9 +356,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Contact Details -->
+							/Contact Details
 							
-							<!-- Pricing -->
+							Pricing
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Pricing</h4>
@@ -367,9 +386,9 @@
 									
 								</div>
 							</div>
-							<!-- /Pricing -->
+							/Pricing
 							
-							<!-- Services and Specialization -->
+							Services and Specialization
 							<div class="card services-card">
 								<div class="card-body">
 									<h4 class="card-title">Services and Specialization</h4>
@@ -385,9 +404,9 @@
 									</div> 
 								</div>              
 							</div>
-							<!-- /Services and Specialization -->
+							/Services and Specialization
 						 
-							<!-- Education -->
+ -->							<!-- Education -->
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Education</h4>
@@ -398,10 +417,10 @@
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Degree</label>
-															<input type="text" class="form-control">
+															<input type="text"  name="degree" class="form-control">
 														</div> 
 													</div>
-													<div class="col-12 col-md-6 col-lg-4">
+													<!-- <div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>College/Institute</label>
 															<input type="text" class="form-control">
@@ -412,7 +431,7 @@
 															<label>Year of Completion</label>
 															<input type="text" class="form-control">
 														</div> 
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -423,8 +442,8 @@
 								</div>
 							</div>
 							<!-- /Education -->
-						
-							<!-- Experience -->
+		<!-- 				
+							Experience
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Experience</h4>
@@ -465,9 +484,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Experience -->
+							/Experience
 							
-							<!-- Awards -->
+							Awards
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Awards</h4>
@@ -492,9 +511,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Awards -->
+							/Awards
 							
-							<!-- Memberships -->
+							Memberships
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Memberships</h4>
@@ -513,9 +532,9 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Memberships -->
+							/Memberships
 							
-							<!-- Registrations -->
+							Registrations
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Registrations</h4>
@@ -540,17 +559,19 @@
 									</div>
 								</div>
 							</div>
-							<!-- /Registrations -->
+ -->							<!-- /Registrations -->
 							
 							<div class="submit-section submit-btn-bottom">
 								<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
 							</div>
 							
 						</div>
-					</div>
+					   </div>
+					  
 
 				</div>
-
+				</form>
+				
 			</div>		
 			<!-- /Page Content -->
    

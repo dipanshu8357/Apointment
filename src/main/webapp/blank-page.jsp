@@ -29,6 +29,18 @@
 	</head>
 	<body>
 
+
+		<!--Manage session -->
+		  <%if(session.getAttribute("type") == "doctor"){ %>
+			
+			<% response.sendRedirect("doctor-dashboard.jsp");%>
+			
+			<%}else if(session.getAttribute("type") == "patient") {%>
+			 
+			 <% response.sendRedirect("patient-dashboard.jsp");%>
+			
+			<%}%>
+		<!--Manage session end -->
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
 		

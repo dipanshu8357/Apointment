@@ -27,6 +27,13 @@
     <body>
 	
 		<!-- Main Wrapper -->
+		   <%if(session.getAttribute("type")=="admin" ){ %>
+			
+				<%response.sendRedirect("./index.jsp");%>
+			
+			<%}%>
+			
+				
         <div class="main-wrapper login-body">
             <div class="login-wrapper">
             	<div class="container">
@@ -39,16 +46,14 @@
 								<h1>Login</h1>
 								 <p style="color:red;">
 											<%if(request.getAttribute("loginError")!=null){ %>
-											
-											<%= request.getAttribute("loginError") %>
+											<%=request.getAttribute("loginError") %>
 											
 											<%}else if(request.getAttribute("signup")!=null){%>
 											
 											 <p style="color:green;">
-											<%=request.getAttribute("signup") %>
+											  <%=request.getAttribute("signup") %>
 											 </p>
-											
-											<%} %>
+											<%}%>
 								</p>
 								<p class="account-subtitle"> Access to our dashboard</p>
 								

@@ -79,9 +79,7 @@ public class PatientController extends HttpServlet {
 		String mobileNumber=request.getParameter("mobile");
 		 PatientSettingData psd= pdi.patientProfileGetData(mobileNumber);
 		 
-//	      String filePath=  "F:\\JAVA PROJECT\\newJava\\AppointmentImage\\photo.jpeg";
-		
-		 
+	 
           request.setAttribute("patient",psd);
 		  RequestDispatcher rd = request.getRequestDispatcher("profile-settings.jsp");
 		  rd.forward(request, response);
@@ -171,6 +169,7 @@ public class PatientController extends HttpServlet {
 		
 		  
 	}
+	
 	
 	protected void patientRegistration(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

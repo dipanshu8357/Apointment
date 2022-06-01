@@ -34,9 +34,9 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doPost(request,response);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -48,18 +48,17 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
-	     
+		
 		String action=request.getParameter("action");
+	        System.out.println(action+"   :main action");
 	        
 	        
 		String mobileNumber = request.getParameter("mobileNumber");
 		String password = request.getParameter("password");
-
-		// System.out.println(mobileNumber+"-"+password);
-
-		mobileNumber = mobileNumber.trim();
-		password = password.trim();
-		
+		if(mobileNumber!=null || password!=null) {
+			mobileNumber = mobileNumber.trim();
+			password = password.trim();
+		}
 		/*
 		 * request.setAttribute("mobile", mobileNumber);
 		 * response.sendRedirect("/PatientController");
@@ -78,32 +77,39 @@ public class LoginController extends HttpServlet {
 			
 			
 		} else {
-
+			System.out.println(action+"   :main action else");
 			if(action.equals("userLogin")) {
-					userLogin(request,response,mobileNumber,password,session);
+					userLogin(request,response,mobileNumber,password);
 			}else if(action.equals("adminLogin")) {
-					adminLogin(request,response,mobileNumber,password,session);
+					adminLogin(request,response,mobileNumber,password);
+			}else if(action.equals("logout")) {
+				
+				System.out.println(action+"   :main action logout");
+					session.invalidate();
+					response.sendRedirect("index-2.jsp");
+					  
+					  
 			}
-
+					 
 		}
 		
 	}
-	protected void userLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password,HttpSession session) throws ServletException, IOException {
+	protected void userLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
 		if (udi.verifyPassword(password)) {
 			
 			if (udi.verifyUser(mobileNumber, password)) {
 
+				session.setAttribute("mobileNumber",mobileNumber );
 				if (udi.identifyUser(mobileNumber)) {
-
-					session.setAttribute("mobileNumber",mobileNumber );				
+			
 					session.setAttribute("type","doctor");
 					
 					RequestDispatcher rd = request.getRequestDispatcher("doctor-dashboard.jsp");
 					rd.forward(request, response);
 				} else {
 
-					session.setAttribute("mobileNumber",mobileNumber );
 					session.setAttribute("type","patient");
 					
 					RequestDispatcher rd = request.getRequestDispatcher("patient-dashboard.jsp");
@@ -127,14 +133,15 @@ public class LoginController extends HttpServlet {
 		
 	}
 	
-protected void adminLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password,HttpSession session) throws ServletException, IOException {
+protected void adminLogin(HttpServletRequest request, HttpServletResponse response,String mobileNumber,String password) throws ServletException, IOException {
 	
-	System.out.println("adminLogin");
+	HttpSession session = request.getSession();
+
+			System.out.println("adminLogin");
 			if (adi.verifyPassword(password)) {
 			
-			if (adi.verifyUser(mobileNumber, password)) {
+					if (adi.verifyUser(mobileNumber, password)) {
 
-				
 					session.setAttribute("mobileNumber",mobileNumber );
 					
 					session.setAttribute("type","admin");
@@ -143,19 +150,18 @@ protected void adminLogin(HttpServletRequest request, HttpServletResponse respon
 					RequestDispatcher rd = request.getRequestDispatcher("admin/index.jsp");
 					rd.forward(request, response);
 				
-				
+					} else {
+						System.out.println("Admin Not Registred!!");
+						request.setAttribute("loginError","Admin Not Registred!!" );
+						RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
+						rd.forward(request, response);
+					}
 			} else {
-				System.out.println("Admin Not Registred!!");
-				request.setAttribute("loginError","Admin Not Registred!!" );
-				RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
-				rd.forward(request, response);
-			}
-		} else {
-			request.setAttribute("loginError", "Invalid Password !!!");
+					request.setAttribute("loginError", "Invalid Password !!!");
 
-			System.out.println("Invalid Password !!!");
-			RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
-			rd.forward(request, response);
+						System.out.println("Invalid Password !!!");
+						RequestDispatcher rd = request.getRequestDispatcher("admin/login.jsp");
+						rd.forward(request, response);
 		}
 
 		

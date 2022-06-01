@@ -28,6 +28,22 @@
 	
 	</head>
 	<body>
+			<!-- manage session -->
+			 <%if(session.getAttribute("type") == "doctor"){ %>
+			
+			<% response.sendRedirect("doctor-dashboard.jsp");%>
+			
+			<%}else if(session.getAttribute("type") == "patient") {%>
+			 
+			 <%-- <% response.sendRedirect("patient-dashboard.jsp");%>--%>
+			 	<!--when patient is login continue....  -->
+			<%}else if(session.getAttribute("type") == "admin") {%>
+			 
+			  <% response.sendRedirect("admin/index.jsp");%>
+			
+			<%}%>
+		<!--Manage session end -->
+    		
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -36,20 +52,7 @@
 			<jsp:include page="header.jsp"/>
 			<!-- /Header -->
 			
-			
-			  <%if(session.getAttribute("type") == "doctor"){ %>
-			
-			<%  response.sendRedirect("doctor-dashboard.jsp");%>
-			
-			<%}else if(session.getAttribute("type") == "patient") {%>
 		
-			<%}else {%>
-			
-				<%response.sendRedirect("login.jsp");%>
-			
-		 	<%}%>
-		
-			
 			<!-- Breadcrumb -->
 			<div class="breadcrumb-bar">
 				<div class="container-fluid">
@@ -126,7 +129,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="index-2.jsp">
+												<a href="${pageContext.request.contextPath}/LoginController?action=logout">
 													<i class="fas fa-sign-out-alt"></i>
 													<span>Logout</span>
 												</a>

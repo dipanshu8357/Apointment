@@ -42,7 +42,7 @@
 								<span>Main</span>
 							</li>
 							<li> 
-								<a href="index.jsp"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="${pageContext.request.contextPath}/admin/index.jsp"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li> 
 								<a href="${pageContext.request.contextPath}/admin/appointment-list.jsp"><i class="fe fe-layout"></i> <span>Appointments</span></a>
@@ -54,7 +54,8 @@
 								<a href="${pageContext.request.contextPath}/admin/doctor-list.jsp"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
 							<li> 
-								<a href="${pageContext.request.contextPath}/admin/patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
+							<!-- Go to adminController -->
+								<a href="${pageContext.request.contextPath}/AdminController?action=showPatinetData" method="post"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
 							<li> 
 								<a href="${pageContext.request.contextPath}/admin/reviews.jsp"><i class="fe fe-star-o"></i> <span>Reviews</span></a>

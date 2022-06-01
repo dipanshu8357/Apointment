@@ -35,8 +35,19 @@ public class DoctorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		doPost(request, response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String degree[]= request.getParameterValues("degree");
+		System.out.println(degree[0]);
+		System.out.println(degree[1]);
+//		System.out.println(degree[1]);
+		
+//		String name=request.getParameter("name");
+		
+		/*
+		 * System.out.println(degree[1]); System.out.println(degree[2]);
+		 *//*
+			 * doPost(request, response);
+			 * response.getWriter().append("Served at: ").append(request.getContextPath());
+			 */
 	}
 
 	/**

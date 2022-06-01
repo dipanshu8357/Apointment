@@ -154,7 +154,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="index-2.jsp">
+												<a href="${pageContext.request.contextPath}/LoginController?action=logout">
 													<i class="fas fa-sign-out-alt"></i>
 													<span>Logout</span>
 												</a>

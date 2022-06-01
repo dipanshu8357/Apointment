@@ -8,19 +8,19 @@
        
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="admin/assets/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="admin/assets/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="./assets/css/feathericon.min.css">
+        <link rel="stylesheet" href="admin/assets/css/feathericon.min.css">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="admin/assets/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -38,10 +38,10 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.jsp" class="logo">
-						<img src="./assets/img/logo.png" alt="Logo">
+						<img src="admin/assets/img/logo.png" alt="Logo">
 					</a>
 					<a href="index.jsp" class="logo logo-small">
-						<img src="./assets/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src="admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -82,7 +82,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="./assets/img/doctors/doctor-thumb-01.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/doctors/doctor-thumb-01.jpg">
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
@@ -95,7 +95,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="./assets/img/patients/patient1.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/patients/patient1.jpg">
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
@@ -108,7 +108,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="./assets/img/patients/patient2.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/patients/patient2.jpg">
 												</span>
 												<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
@@ -121,7 +121,7 @@
 										<a href="#">
 											<div class="media">
 												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="./assets/img/patients/patient3.jpg">
+													<img class="avatar-img rounded-circle" alt="User Image" src="admin/assets/img/patients/patient3.jpg">
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
@@ -142,7 +142,7 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="./assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+							<span class="user-img"><img class="rounded-circle" src="admin/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
@@ -156,7 +156,7 @@
 							</div>
 							<a class="dropdown-item" href="profile.jsp">My Profile</a>
 							<a class="dropdown-item" href="settings.jsp">Settings</a>
-							<a class="dropdown-item" href="login.jsp">Logout</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/LoginController?action=logout">Logout</a>
 						</div>
 					</li>
 					<!-- /User Menu -->

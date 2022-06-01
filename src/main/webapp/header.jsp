@@ -14,8 +14,8 @@
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/fontawesome/css/all.min.css">
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
@@ -138,15 +138,20 @@
 							</div>
 						</li>
 						<%if(session.getAttribute("mobileNumber")==null) {%>
+							
 						<li class="nav-item">
 								<a class="nav-link header-login" href="login.jsp">login / Signup </a>
 								
 						</li>
 						<%}else{ %>
+						
 						<li class="nav-item">
-								<form action="login.jsp">
+								
+								<form action="${pageContext.request.contextPath}/LoginController" method="post">
+								
 								<input type="hidden" name="action" value="logout">
-								<button class="btn btn-primary"> Logout</button>
+								
+								<button class="btn btn-primary" >Logout</button>
 								</form>
 						</li>
 						<%}%>
