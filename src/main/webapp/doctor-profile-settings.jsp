@@ -48,7 +48,7 @@
 			<!-- managing session -->
 			 <%if(session.getAttribute("type") == "doctor"){ %>
 			
-			<%  response.sendRedirect("doctor-dashboard.jsp");%>
+		<%-- 	<%  response.sendRedirect("doctor-dashboard.jsp");%> --%>
 			
 			<%}else if(session.getAttribute("type") == "patient") {%>
 			 
@@ -80,6 +80,9 @@
 			
 			<!-- Page Content -->
 			<div class="content">
+			
+			
+			<form action=" ${pageContext.request.contextPath}/DoctorController?action=profileSettingInsData&mobile=${patient.getMobile()}" id="submit" method="post" >
 				<div class="container-fluid">
 
 					<div class="row">
@@ -176,8 +179,10 @@
 								</div>
 							</div>
 							<!-- /Profile Sidebar -->
-							
+						<	
 						</div>
+						
+						
 						<div class="col-md-7 col-lg-8 col-xl-9">
 						
 							<!-- Basic Information -->
@@ -204,26 +209,26 @@
 										
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>First Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
+												<label>First Name <span class="text-danger" >*</span></label>
+												<input type="text" class="form-control" name="firstName" value="${doctor.getFirstName()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Last Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
+												<label>Last Name <span class="text-danger" ">*</span></label>
+												<input type="text" class="form-control" name="lastName" value="${doctor.getLastName()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Phone Number</label>
-												<input type="text" class="form-control">
+												<label>Phone Number </label>
+												<input type="text" class="form-control" name="mobileNumber" value="${doctor.getMobileNumber() }">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Gender</label>
-												<select class="form-control select">
+												<select class="form-control select" name="gender" value="${doctor.getGender() }">
 													<option>Select</option>
 													<option>Male</option>
 													<option>Female</option>
@@ -234,7 +239,7 @@
 											<div class="form-group">
 													<label>Date of Birth</label>
 													<div class="cal-icon">
-														<input type="text" class="form-control datetimepicker" name="dateOfBirth" value="" required>
+														<input type="date" class="form-control datetimepicker" name="dateOfBirth" value="${doctor.getDateOfBirth() }">
 												   </div>
 											</div>
 										</div>
@@ -247,9 +252,9 @@
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">About Me</h4>
-									<div class="form-group mb-0">
+									<div class="form-group mb-0"> 
 										<label>Biography</label>
-										<textarea class="form-control" rows="5"></textarea>
+										<textarea class="form-control" rows="5" name="biography" value="${doctor.getBiography() }"></textarea>
 									</div>
 								</div>
 							</div>
@@ -263,13 +268,13 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Clinic Name</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="clinicName" value="${doctor.getClinicName()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Clinic Address</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="clinicAddress" value="${doctor.getClinicAddress()}">
 											</div>
 										</div>
 										<div class="col-md-12">
@@ -301,38 +306,38 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Address Line 1</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="addressLine1" value="${doctor.getAddressLine1()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">Address Line 2</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="addressLine2" value="${doctor.getAddressLine2()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">City</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="city" value="${doctor.getCity()}" >
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">State / Province</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="state" value="${doctor.getState()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">Country</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="country" value="${doctor.getCountry()}">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label">Postal Code</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="postalCode" value="${doctor.getPostalCode()}">
 											</div>
 										</div>
 									</div>
@@ -361,7 +366,7 @@
 									
 									<div class="row custom_price_cont" id="custom_price_cont" style="display: none;">
 										<div class="col-md-4">
-											<input type="text" class="form-control" id="custom_rating_input" name="custom_rating_count" value="" placeholder="20">
+											<input type="text" class="form-control" id="custom_rating_input" name="pricing" value=" ${doctor.getPricing() }" placeholder="20">
 											<small class="form-text text-muted">Custom price you can add</small>
 										</div>
 									</div>
@@ -376,12 +381,12 @@
 									<h4 class="card-title">Services and Specialization</h4>
 									<div class="form-group">
 										<label>Services</label>
-										<input type="text" data-role="tagsinput" class="input-tags form-control" placeholder="Enter Services" name="services" value="Tooth cleaning " id="services">
+										<input type="text" data-role="tagsinput" class="input-tags form-control" placeholder="Enter Services" name="services" value="${doctor.getServices() } " id="services">
 										<small class="form-text text-muted">Note : Type & Press enter to add new services</small>
 									</div> 
 									<div class="form-group mb-0">
 										<label>Specialization </label>
-										<input class="input-tags form-control" type="text" data-role="tagsinput" placeholder="Enter Specialization" name="specialist" value="Children Care,Dental Care" id="specialist">
+										<input class="input-tags form-control" type="text" data-role="tagsinput" placeholder="Enter Specialization" name="specialist" value="${doctor.getSpecialist() }" id="specialist">
 										<small class="form-text text-muted">Note : Type & Press  enter to add new specialization</small>
 									</div> 
 								</div>              
@@ -399,19 +404,21 @@
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Degree</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="degree" value="dip">
+															
+															
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>College/Institute</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="college" value="${doctor.getClg()}">
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Year of Completion</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="yearCompletetion" value="${doctor.getYearCompletetion()}">
 														</div> 
 													</div>
 												</div>
@@ -436,25 +443,25 @@
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Hospital Name</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="hospitalName" value="${doctor.getHospitalName()}">
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>From</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="from" value="${doctor.getFrom()}">
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>To</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="to" value="${doctor.getTo()}">
 														</div> 
 													</div>
 													<div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>Designation</label>
-															<input type="text" class="form-control">
+															<input type="text" class="form-control" name="designation" value="${doctor.getDesignation()}">
 														</div> 
 													</div>
 												</div>
@@ -477,13 +484,13 @@
 											<div class="col-12 col-md-5">
 												<div class="form-group">
 													<label>Awards</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="award" value="${doctor.getAward()}">
 												</div> 
 											</div>
 											<div class="col-12 col-md-5">
 												<div class="form-group">
 													<label>Year</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="awardYear" value="${doctor.getAwardYear()}">
 												</div> 
 											</div>
 										</div>
@@ -504,7 +511,7 @@
 											<div class="col-12 col-md-10 col-lg-5">
 												<div class="form-group">
 													<label>Memberships</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="memberships" value="${doctor.getMemberships()}">
 												</div> 
 											</div>
 										</div>
@@ -525,13 +532,13 @@
 											<div class="col-12 col-md-5">
 												<div class="form-group">
 													<label>Registrations</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="registration" value="${doctor.getRegistration()}">
 												</div> 
 											</div>
 											<div class="col-12 col-md-5">
 												<div class="form-group">
 													<label>Year</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="registrationYear" value="${doctor.getRegistrationYear()}">
 												</div> 
 											</div>
 										</div>
@@ -546,13 +553,16 @@
 							<div class="submit-section submit-btn-bottom">
 								<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
 							</div>
-							
+							</form>
 						</div>
 					</div>
 
 				</div>
+			</form>
 
 			</div>		
+			
+			
 			<!-- /Page Content -->
    
 			<!-- Footer -->
