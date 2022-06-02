@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.Apointment.Entity.AdminPatientData;
+import com.Apointment.Entity.AdminPatientDataUpdate;
+import com.Apointment.Entity.AdminPatientShowData;
 import com.Apointment.Model.AdminDAOimp;
 
 /**
@@ -40,15 +41,20 @@ public class AdminController extends HttpServlet {
 		
 		switch(action) {
 		
-		case "showPatinetData": showPatientData(request,response);
-								
-		break;
+		case "showPatinetData": showPatientData(request,response);break;
+		
+		case "editPatinetProfileShow": editPatientProfileShow(request,response);break;
+					
+		case "editPatinetProfileUpdate":editPatinetProfileUpdate(request,response);break;
+		default:
 		
 		
 		}
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -63,18 +69,40 @@ public class AdminController extends HttpServlet {
 	
 	protected void showPatientData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<AdminPatientData> patientList =adi.PatientData();
+		ArrayList<AdminPatientShowData> patientList =adi.allPatientsData();
 		request.setAttribute("patientList", patientList);
-		/*
-		 * for(AdminPatientData i:patientList) {
-		 * 
-		 * System.out.println("->"+i.getAge()); }
-		 */
 		
 		RequestDispatcher rd = request.getRequestDispatcher("admin/patient-list.jsp");
 		rd.forward(request, response);
 	    	
 	}
+	
+	
+	  protected void editPatientProfileShow(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+	  
+		 
+    //ArrayList<AdminPatientData> patients =adi.PatientData();
+		  String mobile = request.getParameter("mobile");
+		  AdminPatientDataUpdate patients=adi.patientData(mobile);
+	  
+		  request.setAttribute("patients", patients);
+	  
+	  RequestDispatcher rd = request.getRequestDispatcher("admin/editPatientProfile.jsp"); 
+	  rd.forward(request,response);
+	  
+	 }
+	  private void editPatinetProfileUpdate(HttpServletRequest request, HttpServletResponse response) {
+			
+			
+		  String mobile = request.getParameter("mobile");
+		  
+		  
+		  
+		  
+//		  AdminPatientDataUpdate patients=adi.patientData(mobile);
+			
+			
+	  }
 		
 
 }

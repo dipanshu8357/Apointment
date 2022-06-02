@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<%-- <!DOCTYPE html> 
 <html lang="en">
 	
 <!-- doccure/doctor-profile-settings.jsp  30 Nov 2019 04:12:14 GMT -->
@@ -97,7 +97,7 @@
 			<div class="content">
 			
 			<form action="${pageContext.request.contextPath}/DoctorController">
-				<!-- <div class="container-fluid">
+				<div class="container-fluid">
 
 					<div class="row">
 						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
@@ -406,7 +406,7 @@
 							</div>
 							/Services and Specialization
 						 
- -->							<!-- Education -->
+							<!-- Education -->
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Education</h4>
@@ -420,7 +420,7 @@
 															<input type="text"  name="degree" class="form-control">
 														</div> 
 													</div>
-													<!-- <div class="col-12 col-md-6 col-lg-4">
+												 <div class="col-12 col-md-6 col-lg-4">
 														<div class="form-group">
 															<label>College/Institute</label>
 															<input type="text" class="form-control">
@@ -431,7 +431,7 @@
 															<label>Year of Completion</label>
 															<input type="text" class="form-control">
 														</div> 
-													</div> -->
+													</div> 
 												</div>
 											</div>
 										</div>
@@ -442,7 +442,7 @@
 								</div>
 							</div>
 							<!-- /Education -->
-		<!-- 				
+		 				
 							Experience
 							<div class="card">
 								<div class="card-body">
@@ -559,7 +559,7 @@
 									</div>
 								</div>
 							</div>
- -->							<!-- /Registrations -->
+							<!-- /Registrations -->
 							
 							<div class="submit-section submit-btn-bottom">
 								<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
@@ -570,6 +570,7 @@
 					  
 
 				</div>
+				
 				</form>
 				
 			</div>		
@@ -611,4 +612,4 @@
 	</body>
 
 <!-- doccure/doctor-profile-settings.jsp  30 Nov 2019 04:12:15 GMT -->
-</html>
+</html> --%>

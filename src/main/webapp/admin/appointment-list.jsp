@@ -44,7 +44,7 @@
 			
 			<%}else if(session.getAttribute("type") == "admin") {%>
 			 
-			 <% response.sendRedirect("admin/index.jsp");%>
+			<%--  <% response.sendRedirect("admin/index.jsp");%> --%>
 			
 			<%}%>
 		<!--Manage session end -->

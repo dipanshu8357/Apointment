@@ -1,4 +1,4 @@
-/*
+/*/*
 Author       : Dreamguys
 Template Name: Doccure - Bootstrap Template
 Version      : 1.0
@@ -194,4 +194,4 @@ Version      : 1.0
         return false;
     });
 	
-})(jQuery);
+})(jQuery);*/

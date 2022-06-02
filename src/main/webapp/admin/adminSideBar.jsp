@@ -8,19 +8,19 @@
        
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/admin/assets/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="./assets/css/feathericon.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/feathericon.min.css">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -55,7 +55,7 @@
 							</li>
 							<li> 
 							<!-- Go to adminController -->
-								<a href="${pageContext.request.contextPath}/AdminController?action=showPatinetData" method="post"><i class="fe fe-user"></i> <span>Patients</span></a>
+								<a href="${pageContext.request.contextPath}/AdminController?action=showPatinetData"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
 							<li> 
 								<a href="${pageContext.request.contextPath}/admin/reviews.jsp"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
@@ -69,7 +69,7 @@
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="invoice-report.jsp">Invoice Reports</a></li>
+									<li><a href="${pageContext.request.contextPath}/admin/invoice-report.jsp">Invoice Reports</a></li>
 								</ul>
 							</li>
 							<li class="menu-title"> 

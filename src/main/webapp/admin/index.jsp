@@ -8,25 +8,25 @@
         <title>Doccure - Dashboard</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="admin/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./admin/assets/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="admin/assets/css/feathericon.min.css">
-		
-		<link rel="stylesheet" href="admin/assets/plugins/morris/morris.css">
+        <link rel="stylesheet" href="./admin/assets/css/feathericon.min.css">
+			
+		<link rel="stylesheet" href="./admin/assets/plugins/morris/morris.css">
 		
 		<!-- Main CSS -->	
-        <link rel="stylesheet" href="admin/assets/css/style.css">
+        <link rel="stylesheet" href="./admin/assets/css/style.css">
 		
 		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
+			<script src="./assets/js/html5shiv.min.js"></script>
+			<script src="./assets/js/respond.min.js"></script>
 		<![endif]-->
     </head>
     <body>
@@ -218,7 +218,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Ruby Perrin</a>
 														</h2>
 													</td>
@@ -235,7 +235,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Darren Elder</a>
 														</h2>
 													</td>
@@ -252,7 +252,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-03.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-03.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Deborah Angel</a>
 														</h2>
 													</td>
@@ -269,7 +269,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-04.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-04.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Sofia Brient</a>
 														</h2>
 													</td>
@@ -286,7 +286,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-05.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-05.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Marvin Campbell</a>
 														</h2>
 													</td>
@@ -330,7 +330,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient1.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Charlene Reed </a>
 														</h2>
 													</td>
@@ -341,7 +341,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient2.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Travis Trimble </a>
 														</h2>
 													</td>
@@ -352,7 +352,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient3.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Carl Kelly</a>
 														</h2>
 													</td>
@@ -363,7 +363,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient4.jpg" alt="User Image"></a>
 															<a href="profile.jsp"> Michelle Fairfax</a>
 														</h2>
 													</td>
@@ -374,7 +374,7 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient5.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Gina Moore</a>
 														</h2>
 													</td>
@@ -416,14 +416,14 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Ruby Perrin</a>
 														</h2>
 													</td>
 													<td>Dental</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient1.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Charlene Reed </a>
 														</h2>
 													</td>
@@ -441,14 +441,14 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Darren Elder</a>
 														</h2>
 													</td>
 													<td>Dental</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient2.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Travis Trimble </a>
 														</h2>
 													</td>
@@ -467,14 +467,14 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-03.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-03.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Deborah Angel</a>
 														</h2>
 													</td>
 													<td>Cardiology</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient3.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Carl Kelly</a>
 														</h2>
 													</td>
@@ -492,14 +492,14 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-04.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-04.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Sofia Brient</a>
 														</h2>
 													</td>
 													<td>Urology</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient4.jpg" alt="User Image"></a>
 															<a href="profile.jsp"> Michelle Fairfax</a>
 														</h2>
 													</td>
@@ -517,14 +517,14 @@
 												<tr>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-05.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/doctors/doctor-thumb-05.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Dr. Marvin Campbell</a>
 														</h2>
 													</td>
 													<td>Orthopaedics</td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+															<a href="profile.jsp" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="./assets/img/patients/patient5.jpg" alt="User Image"></a>
 															<a href="profile.jsp">Gina Moore</a>
 														</h2>
 													</td>
@@ -558,21 +558,21 @@
 		<!-- /Main Wrapper -->
 		
 		<!-- jQuery -->
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="./admin/assets/js/jquery-3.2.1.min.js"></script>
 		
 		<!-- Bootstrap Core JS -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="./admin/assets/js/popper.min.js"></script>
+        <script src="./admin/assets/js/bootstrap.min.js"></script>
 		
 		<!-- Slimscroll JS -->
-        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="./admin/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 		
-		<script src="assets/plugins/raphael/raphael.min.js"></script>    
-		<script src="assets/plugins/morris/morris.min.js"></script>  
-		<script src="assets/js/chart.morris.js"></script>
+		<script src="./admin/assets/plugins/raphael/raphael.min.js"></script>    
+		<script src="./admin/assets/plugins/morris/morris.min.js"></script>  
+		<script src="./admin/assets/js/chart.morris.js"></script>
 		
 		<!-- Custom JS -->
-		<script  src="assets/js/script.js"></script>
+		<script  src="./admin/assets/js/script.js"></script>
 		
     </body>
 

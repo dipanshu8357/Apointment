@@ -85,12 +85,7 @@
 											<tbody>
 											
 								 		 
-									<%-- 			
-										 <%ArrayList<AdminPatientData> patientList = request.getAttribute("patientList");%> 
-										 <%for(int k=0;k<patientList.length;k++){%>
-										 <% out.print(patientList[k]);%>
-										 <%} %>
-												 --%>
+									
 												<%int i=1; %>
 												<c:forEach var="patients" items="${patientList}">
 												<tr>
@@ -98,18 +93,18 @@
 														<td>#PT00<%out.print(i++); %></td>
 													<td>
 														<h2 class="table-avatar">
-															<a href="profile.jsp" class="avatar avatar-sm mr-2">
+															<a href="${pageContext.request.contextPath}/AdminController?action=editPatinetProfileShow&mobile=${patients.getMobile()}"" class="avatar avatar-sm mr-2">
 															
 															<img src="data:image/jpeg;base64,${patients.getBase64Image()}" class="avatar-img rounded-circle" onerror="this.src='assets/img/patients/patient1.jpg'" alt="User Image">
 															 
 															</a>
-															<a href="admin/profile.jsp">${patients.getFirstName()}${patients.getLastName()}</a>
+															<a href="${pageContext.request.contextPath}/AdminController?action=editPatinetProfileShow&mobile=${patients.getMobile()}">${patients.getFirstName()}  ${patients.getLastName()}</a>
 														</h2>
 													</td>
 													
 												    <td>${patients.getAge() }<!--calculate age function creating  --></td>
-													<td>${patients.getAddress() }</td>
-													<td>${patients.getMobile() }</td>
+													<td>${patients.getCountry()},${patients.getState()}, ${patients.getCity()}, ${patients.getAddress()}, ${patients.getZipCode()}</td>
+													<td>${patients.getMobile()}</td>
 													<td>20 Oct 2019<!--last visit(Last login of patient)  --></td>
 													<td class="text-right">$100.00</td>
 													
