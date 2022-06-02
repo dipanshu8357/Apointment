@@ -14,7 +14,7 @@ public class DoctorDAOimp {
 	}
 
 	
-	
+//	git
 	public void doctorProfileInsData(DoctorSettingData dsd)
 	{
 		try {

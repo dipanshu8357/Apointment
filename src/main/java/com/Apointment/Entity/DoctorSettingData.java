@@ -233,5 +233,5 @@ public class DoctorSettingData {
 		this.registrationYear = registrationYear;
 	}
 	
-	
+//	stat
 }

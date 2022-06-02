@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<%-- 	<!DOCTYPE html> 
 <html lang="en">
 	
 <!-- doccure/profile-settings.jsp  30 Nov 2019 04:12:18 GMT -->
@@ -272,14 +272,15 @@
 										<div class="submit-section">
 											<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
 										</div>
-									</form>
-									<!-- /Profile Settings Form -->
+																		<!-- /Profile Settings Form -->
 									
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				</form>
+				
 
 			</div>		
 			<!-- /Page Content -->
@@ -315,4 +316,4 @@
 	</body>
 
 <!-- doccure/profile-settings.jsp  30 Nov 2019 04:12:18 GMT -->
-</html>
+</html> --%>
